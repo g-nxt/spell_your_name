@@ -13,6 +13,8 @@ on:
 
 jobs:
   build:
+    env:
+      my_secret: ${{secrets.ACCESS_TOKEN}}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -39,7 +41,7 @@ jobs:
         git init
         git config user.name  "CI"
         git config user.email "flutter-ci@github.com"
-        git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/g-nxt/spell_your_name.git
+        git remote add secure-origin https://${{secrets.ACCESS_TOKEN}}@github.com/g-nxt/spell_your_name.git
         git checkout -b gh-pages
         git add .
         git commit -m "Updated docs"
