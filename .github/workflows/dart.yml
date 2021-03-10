@@ -19,17 +19,21 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: beta
-    - run: flutter upgrade    
+    - run: flutter upgrade
+      working-directory: ./development
     - run: flutter config --enable-web
+      working-directory: ./development
     - run: flutter pub get
+      working-directory: ./development
     - run: flutter build web
+      working-directory: ./development
     - name: Deploy
       run: |
-        cd web
+        cd development/build/web
         git init
         git config user.name  "CI"
         git config user.email "flutter-ci@github.com"
-        git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/[g-nxt]/[spell_your_name].git
+        git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/g-nxt/spell_your_name.git
         git checkout -b main
         git add .
         git commit -m "Updated app"
