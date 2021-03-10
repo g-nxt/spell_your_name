@@ -28,11 +28,11 @@ jobs:
     - run: flutter build web
       working-directory: ./example
     - run: cat index.html
-      working-directory: ./example/web
+      working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: sed -i '/base href/d' index.html
-      working-directory: ./example/web
+      working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: cat index.html
-      working-directory: ./example/web
+      working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - name: Deploy
       run: |
         cd example/web
