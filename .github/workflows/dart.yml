@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Dart
+name: Flutter App Spell Your Name
 
 on:
   push:
@@ -19,6 +19,18 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: beta
+    - run: flutter upgrade    
     - run: flutter config --enable-web
     - run: flutter pub get
     - run: flutter build web
+    - name: Deploy
+      run: |
+        cd example/build/web
+        git init
+        git config user.name  "CI"
+        git config user.email "flutter-ci@github.com"
+        git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/[g-nxt]/[spell_your_name].git
+        git checkout -b main
+        git add .
+        git commit -m "Updated app"
+        git push --force secure-origin main
