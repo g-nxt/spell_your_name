@@ -29,7 +29,7 @@ jobs:
         git config user.name  "CI"
         git config user.email "flutter-ci@github.com"
         git remote add secure-origin https://${{ secrets.ACCESS_TOKEN }}@github.com/g-nxt/spell_your_name.git
-        git checkout -b main
+        git checkout -b gh-pages
         git add .
         git commit -m "Updated app"
-        git push --force secure-origin main
+        git push --force secure-origin gh-pages
