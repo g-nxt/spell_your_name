@@ -22,22 +22,21 @@ jobs:
       with:
         channel: beta
     - run: flutter upgrade
-      working-directory: ./example
+      #working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: flutter config --enable-web
-      working-directory: ./example
+      #working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: flutter pub get
-      working-directory: ./example
+      #working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: flutter build web --release
-      working-directory: ./example
+      #working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: cat index.html
-      working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
+      #working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: sed -i '/base href/d' index.html
-      working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
+      #working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - run: cat index.html
-      working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
+      #working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
     - name: Deploy
       run: |
-        cd example/web
         git init
         git config user.name  "CI"
         git config user.email "flutter-ci@github.com"
