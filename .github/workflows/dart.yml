@@ -27,6 +27,9 @@ jobs:
       working-directory: ./example
     - run: flutter build web
       working-directory: ./example
+    - run: cat index.html
+    - run: sed -i '/base href/d' index.html
+    - run: cat index.html
     - name: Deploy
       run: |
         cd example/web
