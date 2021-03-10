@@ -25,7 +25,7 @@ jobs:
       working-directory: ./example
     - run: flutter pub get
       working-directory: ./example
-    - run: flutter build web
+    - run: flutter build web --release
       working-directory: ./example
     - run: cat index.html
       working-directory: /home/runner/work/spell_your_name/spell_your_name/example/web
