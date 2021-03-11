@@ -14,9 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  /*String titleInput;
-  String amountInput;*/
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +24,8 @@ class MyHomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-            width: MediaQuery.of(context).size.width * .75,
+            margin: EdgeInsets.only(top: 10),
+            width: MediaQuery.of(context).size.width * .85,
             child: Column(
               children: [
                 Transaction(),

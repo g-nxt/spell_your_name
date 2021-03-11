@@ -47,7 +47,6 @@ class _UserEntryState extends State<UserEntry> {
       ),
       elevation: 10,
       child: Container(
-        padding: EdgeInsets.all(10),
         margin: EdgeInsets.only(bottom: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
