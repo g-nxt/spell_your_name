@@ -1,6 +1,6 @@
 # spell_your_name
 
-App helps to spell your name wirh phonetic words while you are in a call strugglinig to find words..
+App helps to spell your name or address with phonetic words while you are on a call strugglinig to find words..
 
 ## Getting Started
 
