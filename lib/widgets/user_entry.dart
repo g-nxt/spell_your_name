@@ -57,7 +57,7 @@ class _UserEntryState extends State<UserEntry> {
                 style: TextStyle(fontSize: 20),
                 controller: getNameControl(),
                 decoration: InputDecoration(
-                  labelText: 'Name',
+                  labelText: 'Text',
                   suffixIcon: IconButton(
                     onPressed: resetHandler,
                     icon: Icon(Icons.clear),

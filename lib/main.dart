@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Spell Your Name',
+      title: 'Spell Any Word',
       home: MyHomePage(),
     );
   }
@@ -19,7 +19,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Spell Your Name'),
+        title: Text('Spell Any Word'),
       ),
       body: SingleChildScrollView(
         child: Center(
